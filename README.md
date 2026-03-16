@@ -184,3 +184,24 @@ Main tables used in the project:
 Ahmad Suliman
 
 GitHub: ahmad-suliman
+
+## Screenshots
+
+<p align="center">
+  <img src="https://github.com/ahmad-suliman/school-system-laravel/blob/main/public/assets/img/school/logi.png" width="32%" />
+  <img src="https://github.com/ahmad-suliman/school-system-laravel/blob/main/public/assets/img/school/Annotation%202026-03-16%20183945.png" width="32%" />
+  <img src="https://github.com/ahmad-suliman/school-system-laravel/blob/main/public/assets/img/school/Annotation%202026-03-16%20184016.png" width="32%" />
+</p>
+
+<p align="center">
+  <img src="https://github.com/ahmad-suliman/school-system-laravel/blob/main/public/assets/img/school/Annotation%202026-03-16%20184044.png" width="32%" />
+  <img src="https://github.com/ahmad-suliman/school-system-laravel/blob/main/public/assets/img/school/Annotation%202026-03-16%20184127.png" width="32%" />
+  <img src="https://github.com/ahmad-suliman/school-system-laravel/blob/main/public/assets/img/school/Annotation%202026-03-16%20184154.png" width="32%" />
+</p>
+
+<p align="center">
+  <img src="https://github.com/ahmad-suliman/school-system-laravel/blob/main/public/assets/img/school/Annotation%202026-03-16%20184220.png" width="32%" />
+  <img src="https://github.com/ahmad-suliman/school-system-laravel/blob/main/public/assets/img/school/Annotation%202026-03-16%20184252.png" width="32%" />
+ 
+</p>
+
