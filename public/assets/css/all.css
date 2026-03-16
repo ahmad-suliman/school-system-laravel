@@ -1,0 +1,11 @@
+.section-title h3 {
+    font-size: 60px;
+}
+.contact-form form{
+    width: 100%;
+    display: grid;
+    justify-content: center;
+}
+.contact-form form input{
+    width: 300px;
+}
