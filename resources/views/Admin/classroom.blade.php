@@ -46,8 +46,7 @@
                         <td>
                             <div class="d-flex justify-content-center align-items-center gap-2">
 
-                                <a href="#" class="btn btn-sm btn-info mr-2"><i class="fas fa-eye"></i> View</a>
-
+                                
                                 <form action="{{ route('admin.classdelete', $item->id) }}" method="POST" class="m-0 p-0">
                                     @csrf
                                     @method('DELETE')
