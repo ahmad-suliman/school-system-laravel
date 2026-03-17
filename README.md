@@ -194,7 +194,7 @@ GitHub: ahmad-suliman
 </p>
 
 <p align="center">
-  <img src="https://github.com/ahmad-suliman/school-system-laravel/blob/main/public/assets/img/school/Annotation%202026-03-16%20184044.png" width="32%" />
+  
   <img src="https://github.com/ahmad-suliman/school-system-laravel/blob/main/public/assets/img/school/Annotation%202026-03-16%20184127.png" width="32%" />
   <img src="https://github.com/ahmad-suliman/school-system-laravel/blob/main/public/assets/img/school/Annotation%202026-03-16%20184154.png" width="32%" />
 </p>
