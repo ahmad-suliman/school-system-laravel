@@ -46,7 +46,10 @@
                         <td>
                             <div class="d-flex justify-content-center align-items-center gap-2">
 
+<<<<<<< HEAD
                                 
+=======
+>>>>>>> 0d4a11d (update classroom action)
                                 <form action="{{ route('admin.classdelete', $item->id) }}" method="POST" class="m-0 p-0">
                                     @csrf
                                     @method('DELETE')
