@@ -190,7 +190,7 @@ GitHub: ahmad-suliman
 <p align="center">
   <img src="https://github.com/ahmad-suliman/school-system-laravel/blob/main/public/assets/img/school/logi.png" width="32%" />
   <img src="https://github.com/ahmad-suliman/school-system-laravel/blob/main/public/assets/img/school/Annotation%202026-03-16%20183945.png" width="32%" />
-  <img src="https://github.com/ahmad-suliman/school-system-laravel/blob/main/public/assets/img/school/Annotation%202026-03-16%20184016.png" width="32%" />
+  <img src="public/assets/img/school/Annotation 2026-03-17 084754.png" width="32%" />
 </p>
 
 <p align="center">
