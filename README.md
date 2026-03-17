@@ -1,191 +1,160 @@
-# 🎓 School System Laravel
+# School Management System
 
-A simple **School Management System** built with **Laravel** for managing students, classrooms, subjects, grades, and attendance.
-
-This project was created as a **backend-focused practice project** to improve Laravel skills in:
-
-- CRUD operations
-- Eloquent relationships
-- Authentication & roles
-- Attendance tracking by date
-- Grade management
-- PDF export
-- Admin / Employee dashboards
+A **School Management System** built with **Laravel 12**, **PHP 8.2**, and **MySQL**.  
+This project helps manage **classrooms, students, subjects, attendance, grades, and user roles** in a simple and organized admin dashboard.
 
 ---
 
-## ✨ Features
+## 📌 Features
 
-### 👤 Authentication & Roles
-- Login system
-- Role-based access:
-  - **Admin**
-  - **Employee**
-
-### 🧑‍🎓 Student Management
-- Add new students
-- Edit student information
-- Delete students
-- View student details
-- Assign students to classrooms
-
-### 🏫 Classroom Management
-- Create classrooms
-- Assign employee/teacher to classroom
-- View all classrooms
-
-### 📚 Subject Management
-- Add subjects
-- Assign subjects to classrooms
-- View subjects by classroom
-
-### 📝 Grade Management
-- Add grades for students
-- Assign grades by subject
-- View all grades
-- View grades for a specific student
-- Export student grades as **PDF**
-
-### 📅 Attendance Management
-- Mark attendance by date
-- Set student status:
-  - **Present**
-  - **Absent**
-- Filter attendance records by date
-- Show attendance for current day or previous dates
-- Show only students from a selected classroom
-
-### 📊 Dashboard
-- **Admin Dashboard**
-  - Total Students
-  - Total Employees
-  - Total Subjects
-  - Total Classrooms
-  - Total Grades
-  - Total Attendance Records
-### 📄 PDF Export
-
-The system supports exporting student grade reports as PDF using DomPDF.
-
- - Example use case:
- - Open a student profile
- - View all grades and subjects
- - Export the report as PDF
-
-- **Employee Dashboard**
-  - Overview of system data
-  - Quick navigation to students, grades, attendance, and classrooms
-
-### 🔍 UI / Table Features
-- jQuery DataTables integration
-- Search / pagination / sorting
-- Bootstrap-based responsive UI
+- User authentication (Admin / Employee roles)
+- Dashboard overview
+- Classroom management (CRUD)
+- Student management (CRUD)
+- Subject management (CRUD)
+- Attendance management by date
+- Grade management for students
+- Role-based access control
+- PDF export for reports
+- Searchable and organized data tables
 
 ---
 
 ## 🛠️ Tech Stack
 
-- **Laravel**
-- **PHP**
-- **MySQL**
-- **Bootstrap**
-- **jQuery**
-- **DataTables**
-- **DomPDF** (for PDF export)
-
+- **Backend:** Laravel 12, PHP 8.2
+- **Database:** MySQL
+- **Frontend:** Blade, Bootstrap, jQuery
+- **Tables:** DataTables
+- **PDF Export:** DomPDF
 ---
 
-## 🗃️ Database Structure
+## 📂 Database Structure
 
-Main tables used in the project:
+### Main Tables
 
-### `phoneuser`
-- `id`
-- `username`
-- `password`
-- `role` (`admin`, `employee`)
-
-### `students`
-- `id`
-- `full_name`
-- `birth_date`
-- `phone`
-- `address`
-- `class_id`
-
-### `classrooms`
-- `id`
-- `class_name`
-- `employee_id`
-
-### `subjects`
-- `id`
-- `name`
-- `class_id`
-
-### `grades`
-- `id`
-- `student_id`
-- `subject_id`
-- `mark`
-
-### `attendances`
-- `id`
-- `student_id`
-- `date`
-- `status` (`present`, `absent`)
+- `phoneusers` → stores system users (admin / employee)
+- `classrooms` → stores classroom information
+- `students` → stores students and their classroom
+- `subjects` → stores subjects for classrooms
+- `attendances` → stores daily student attendance
+- `grades` → stores student grades
 
 ---
 
 ## 🔗 Eloquent Relationships
 
-### Student
-- belongsTo `Classroom`
-- hasMany `Grade`
-- hasMany `Attendance`
-
 ### Classroom
-- hasMany `Student`
-- belongsTo `Phoneuser` (employee)
-- hasMany `Subject`
+- A classroom has many students
+- A classroom has many subjects
+
+### Student
+- A student belongs to a classroom
+- A student has many grades
+- A student has many attendance records
 
 ### Subject
-- belongsTo `Classroom`
-- hasMany `Grade`
+- A subject belongs to a classroom
 
 ### Grade
-- belongsTo `Student`
-- belongsTo `Subject`
+- A grade belongs to a student
 
 ### Attendance
-- belongsTo `Student`
+- An attendance record belongs to a student
 
 ---
 
 ## 🚀 Installation
 
-### 1) Clone the repository
+### 1. Clone the repository
+```bash
+git clone https://github.com/ahmad-suliman/school-system-laravel.git
+cd school-system-laravel
+```
 
-- git clone https://github.com/ahmad-suliman/school-system-laravel.git
-### 2) Go to the project folder
-- cd school-system-laravel
-### 4) Copy environment file
-- copy .env.example .env
-### 5) Seed fake data for testing
-- php artisan db:seed --class=SchoolSystemSeeder
-### 6) Start the development server
-- php artisan serve
-### 7) Now open:
+### 2. Install PHP dependencies
+```bash
+composer install
+```
 
- [http://127.0.0.1:8000]
+### 3. Copy environment file
+```bash
+copy .env.example .env
+```
 
-###👨‍💻 Author
+### 4. Generate application key
+```bash
+php artisan key:generate
+```
 
-Ahmad Suliman
+### 5. Configure database
+Create a MySQL database named:
 
-GitHub: ahmad-suliman
+```txt
+schoolsystem
+```
 
-## Screenshots
+Then update your `.env` file:
+
+```env
+DB_CONNECTION=mysql
+DB_HOST=127.0.0.1
+DB_PORT=3306
+DB_DATABASE=schoolsystem
+DB_USERNAME=root
+DB_PASSWORD=
+```
+
+---
+
+### 6. Run migrations
+```bash
+php artisan migrate
+```
+
+### 7. Seed the database
+```bash
+php artisan db:seed --class=SchoolSystemSeeder
+```
+
+### 8. Install frontend dependencies
+```bash
+npm install
+```
+
+### 9. Compile assets
+```bash
+npm run dev
+```
+
+### 10. Start the server
+```bash
+php artisan serve
+```
+
+Open in browser:
+
+```txt
+http://127.0.0.1:8000
+```
+
+---
+
+## 👤 Demo Login
+
+> Update these if your seeder uses different credentials.
+
+### Admin
+- **Username:** admin
+- **Password:** 12345678
+
+### Employee
+- **Username:** employee[check it inside DB]
+- **Password:** 12345678
+
+---
+
+## 📸 Screenshots
 
 <p align="center">
   <img src="https://github.com/ahmad-suliman/school-system-laravel/blob/main/public/assets/img/school/logi.png" width="32%" />
@@ -209,4 +178,65 @@ GitHub: ahmad-suliman
 <img src="https://github.com/ahmad-suliman/school-system-laravel/blob/main/public/assets/img/school/Annotation%202026-03-17%20090925.png" width="32%" />
  
 </p>
+
+## 📄 PDF Reports
+
+This project supports **PDF export** using **DomPDF** for generating printable school reports.
+
+---
+
+## ⚠️ Important Notes
+
+- Make sure **XAMPP MySQL and Apache** are running.
+- If you change the database structure, run:
+```bash
+php artisan migrate:fresh --seed
+```
+
+> **Warning:** This will delete all current database data and recreate it.
+
+---
+
+## 🧪 Future Improvements
+
+Possible future enhancements for this project:
+
+- Teacher management
+- Parent portal
+- Student report cards
+- Fee/payment management
+- Timetable scheduling
+- Notifications system
+- API version for mobile apps
+
+---
+
+## 📈 Project Purpose
+
+This project was built as a **Laravel practice project** to improve skills in:
+
+- Laravel MVC architecture
+- Database relationships
+- CRUD operations
+- Authentication & authorization
+- Eloquent ORM
+- Blade templating
+- PDF generation
+- Real-world project structure
+
+---
+
+## 🙋 Author
+
+**Ahmad Suliman**
+
+- GitHub: [ahmad-suliman](https://github.com/ahmad-suliman)
+
+---
+
+## 📜 License
+
+This project is open-source and available under the **MIT License**.
+
+
 
